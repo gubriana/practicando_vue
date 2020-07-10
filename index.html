@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Práctica de Directivas</title>
+</head> 
+    <body>
+        <div id = "viajar">
+            <h1 v-if = "encabezado_paises_si">Estos son los paises a los que {{ nombre }} quiere viajar</h1>
+            <ul>
+                <li v-for = "paisessi in lista_paises_si" >{{paisessi}}</li>
+            </ul>
+            <h1 v-if= "encabezado_paises_no">Estos son los paises a los que {{ nombre }} no íria</h1>
+            <ul>
+                <li v-for = "paisesno in lista_paises_no">{{paisesno}}</li>
+            </ul>
+        </div>
+    <!--vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+    var miApp = new Vue({
+        el: '#viajar',
+        data: {
+            nombre: "Gabriela",
+            encabezado_paises_si: true,
+            encabezado_paises_no: true,
+            lista_paises_si: ['Japón', 'Islandia', 'Noruega', 'Suecia', 'Turquia', 'India'],
+            lista_paises_no: ['Estados unidos', 'Perú', 'China', 'Francia']
+        }
+    });
+    </script>
+    </body>
+</html>
